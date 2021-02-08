@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Gokyo Peak Travels & Tours</title>
+     <link rel="stylesheet" href="owlcarousel/assets/owl.carousel.min.css">
+     <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+     <header >
+          <div class="brand flex justify-space-between align-center">
+               <div class="flex align-center">
+                    <div class="logo"><img src="./images/logo.png" alt=""></div>
+                    <div class="typo">GOKYO PEAKS Travels & Tours</div>
+               </div>
+               <div class="hide-lg hamburger"><i class="fas fa-bars"></i></div>
+          </div>
+          <nav class="flex hide">
+              <ul class="menu">
+                    <li><a class="active" href="#">Home</a></li>
+                    <li><a href="#">Flights</a></li>
+                    <li><a href="#">Vehicles</a></li>
+                    <li><a href="#">Rooms</a></li>
+                    <li><a href="#">Destinations</a></li>
+                    <li><a href="#">Contact Us</a></li>
+              </ul>
+              <div class="action">
+              </div>
+          </nav>
+     </header>
+
+     <section class="product">
+          <h1 class="title">Annapurna</h1>
+          <div class="content">
+               <div class="left">
+                    <div class="tabs">
+                         <div class="tab active" onclick="showTab(event, 'overview')">Overview</div>
+                         <div class="tab" onclick="showTab(event, 'itinary')">Itinary</div>
+                         <div class="tab" onclick="showTab(event, 'includes')">include/Exclude</div>
+                         <div class="tab" onclick="showTab(event, 'highlight')">Highlight</div>
+                         <div class="tab" onclick="showTab(event, 'equipment')">Equipments</div>
+                         <div class="tab" onclick="showTab(event, 'reviews')">Reviews (0)</div>
+                    </div>
+                    <div class="tabContent">
+                         <div class="overview show">Overview</div>
+                         <div class="itinary">Itinary</div>
+                         <div class="includes">include/Exclude</div>
+                         <div class="highlight">Highlight</div>
+                         <div class="equipment">Equipment</div>
+                         <div class="reviews">Reviews (0)</div>
+                    </div>
+               </div>
+               <div class="right">
+                    <div class="image">
+                         <img src="./images/destination-d.jpg" alt="">
+                    </div>
+                    <div class="summary hide-sm">
+                         <div class="head">
+                              <b>Trip Summary</b>
+                              <div class="name">Annapurna</div>
+                         </div>
+                         <div class="content">
+                              <div class="item"><b>Place</b><div>Annapurna, Nepal</div></div>
+                              <div class="item"><b>Difficulty</b><div>Hard</div></div>
+                              <div class="item"><b>Group Size</b><div>Min 2pax/Max 2 Pax</div></div>
+                              <div class="item"><b>Start From</b><div>kathmandu</div></div>
+                              <div class="item"><b>End At</b><div>Annapurna, Nepal</div></div>
+                              <div class="item"><b>Best Season</b><div>Anytime</div></div>
+                              <div class="item"><b>Activity</b><div>Hiking</div></div>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </section>
+
+     <footer>
+          <div class="top">
+          <img src="./images/footer.png" alt="">
+          </div>
+          <div class="bottom flex align-center justify-center">© 2021, GOKYO PEAK TRAVELS & TOURS  |  ALL RIGHTS RESERVED  |  DESIGN AND DEVELOP BY: Lightweb Group</div>
+     </footer>
+</body>
+<script src="./js/jquery.min.js"></script>
+<script src="owlcarousel/owl.carousel.min.js"></script>
+<script>
+     $(document).ready(function(){
+          $(".banner.owl-carousel").owlCarousel({
+               loop:true,
+               items:1,
+               nav:true,
+               dots:true,
+               dotsContainer: '.dots',
+               navContainer: '.nav',
+               autoplay: true,
+               autoplayTimeout: 5000,
+               autoplayHoverPause: true,
+          });
+          let couponCarousel = {
+               class: ".hot-deals", 
+               options: {
+                    loop:true,
+                    nav:true,
+                    dots:true,
+                    autoWidth: true,
+                    margin: 35
+               }
+          }
+          let destinationsCarousel = {
+               class: ".popular-destinations", 
+               options: {
+                    loop:true,
+                    nav:true,
+                    dots:true,
+                    autoWidth: true,
+                    margin: 35
+               }
+          }
+          let adventureCarousel = {
+               class: ".exciting-adventures", 
+               options: {
+                    loop:true,
+                    nav:true,
+                    dots:true,
+                    autoWidth: true,
+                    margin: 35
+               }
+          }
+          let clientReviewsCarousel = {
+               class: ".client-reviews", 
+               options: {
+                    loop:true,
+                    items:1,
+                    nav:true,
+                    dots:true,
+                    margin: 20
+               }
+          }
+          let trendingTrips = {
+               class: ".trending-trips", 
+               options: {
+                    loop:true,
+                    nav:true,
+                    autoWidth: true,
+                    margin: 35
+               }
+          }
+
+          let carousels = [couponCarousel, destinationsCarousel, adventureCarousel, clientReviewsCarousel, trendingTrips]
+
+          carousels.forEach(item=>{
+               let carousel = $(`${item.class} .owl-carousel`)
+               carousel.owlCarousel(item.options);
+               carousel.on('mousewheel', '.owl-stage', function (e) {
+               if (e.deltaY<0) {
+                    carousel.trigger('next.owl');
+               } else {
+                    carousel.trigger('prev.owl');
+               }
+               e.preventDefault();
+          });
+          })
+     });
+</script>
+<script src="./js/main.js"></script>
+<script src="./js/jquery.mousewheel.js"></script>
+<script src="https://kit.fontawesome.com/b5b791cd78.js" crossorigin="anonymous"></script>
+</html>

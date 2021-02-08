@@ -8,24 +8,24 @@
      <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-     <header class="">
+     <header >
           <div class="brand flex justify-space-between align-center">
                <div class="flex align-center">
                     <div class="logo"><img src="./images/logo.png" alt=""></div>
                     <div class="typo">GOKYO PEAKS Travels & Tours</div>
                </div>
-               <div class="hamburger"><i class="fas fa-bars"></i></div>
+               <div class="hide-lg hamburger"><i class="fas fa-bars"></i></div>
           </div>
-          <nav class="hide">
-              <div class="menu">
-                    <ul>
-                         <li><a href="#"></a>Home</li>
-                         <li><a href="#"></a>About Us</li>
-                         <li><a href="#"></a>Contact Us</li>
-                    </ul>
-              </div>
+          <nav class="flex hide">
+              <ul class="menu">
+                    <li><a class="active" href="#">Home</a></li>
+                    <li><a href="#">Flights</a></li>
+                    <li><a href="#">Vehicles</a></li>
+                    <li><a href="#">Rooms</a></li>
+                    <li><a href="#">Destinations</a></li>
+                    <li><a href="#">Contact Us</a></li>
+              </ul>
               <div class="action">
-                   <a href="#" class="btn">Signin</a>
               </div>
           </nav>
      </header>
@@ -33,40 +33,58 @@
      <div class="banner">
           <div class="banner owl-carousel">
                <div class="">
-                    <img class="banner-image" style="background-image:url('./images/banner.jpg')" alt="">
+                    <img class="banner-image" style="background-image:url('./images/banner-a.jpg')" alt="">
                     <div class="banner-details">
                         <div class="title">
                               You make your trip<br>
                               We make your bookings
                         </div>
                         <p class="tag">Everything at one place.</p>
-                        <a href="#" class="btn">Book Now</a>
                     </div>
                </div>
                <div class="">
-                    <img class="banner-image"  style="background-image:url('./images/banner.jpg')" alt="">
+                    <img class="banner-image"  style="background-image:url('./images/sebastian-pena-lambarri-Wj9ELwGXa6c-unsplash.jpg')" alt="">
                     <div class="banner-details">
                          <div class="title">
-                               Get the best Deals<br>
-                               See All Destinations
+                               Get best offers<br>
+                               on Holiday Packs
                          </div>
                          <p class="tag">Starting from $999</p>
+                        <a href="#trending-trips" class="btn">See All</a>
                      </div>
                </div>
                <div class="">
-                    <img class="banner-image" style="background-image:url('./images/banner.jpg')" alt="">
+                    <img class="banner-image" style="background-image:url('./images/angga-indratama-qiRJP7HSR9c-unsplash.jpg')" alt="">
                     <div class="banner-details">
                          <div class="title">
-                               Get the best Deals<br>
-                               See All Destinations
+                              Get best offers<br>
+                              on Activity Adventures
                          </div>
                          <p class="tag">Starting from $999</p>
+                        <a href="#exciting-adventures" class="btn">See All</a>
                      </div>
                </div>
           </div>
           <div class="dots"></div>
      </div>
      
+     <section class="bookings  ">
+          <div class="head flex">
+               <div class="title flex"><span>Book</span></div>
+               <div class="items flex">
+                    <div class="item" onclick="showForm('flights')"><i class="fas fa-plane"></i><span>Flights</span></div>
+                    <div class="item" onclick="showForm('vehicles')"><i class="fas fa-taxi"></i><span>Vehicles</span></div>
+                    <div class="item" onclick="showForm('rooms')"><i class="fas fa-hotel"></i><span>Rooms</span></div>          
+                    <div class="item" onclick="showForm('holidays')"><i class="fas fa-hiking"></i><span>Holidays</span></div>          
+               </div>
+          </div>
+          <div class="bookingForms">
+               <div class="flights show">Flights</div>
+               <div class="vehicles">Vehicles</div>
+               <div class="rooms">Rooms</div>
+               <div class="holidays">holidays</div>
+          </div>
+     </section>
      <section class="hot-deals">
           <h2 class="section-title">
                Hot Deals
@@ -190,7 +208,7 @@
            </div>
      </section>
 
-     <section class="exciting-adventures">
+     <section class="exciting-adventures" id="exciting-adventures">
           <h2 class="section-title">
                Exciting Adventures
           </h2>
@@ -253,7 +271,7 @@
            </div>
      </section>
 
-     <section class="trending-trips">
+     <section class="trending-trips" id="trending-trips">
           <h2 class="section-title">
                Trending Trips
           </h2>
@@ -490,6 +508,7 @@
           })
      });
 </script>
+<script src="./js/main.js"></script>
 <script src="./js/jquery.mousewheel.js"></script>
 <script src="https://kit.fontawesome.com/b5b791cd78.js" crossorigin="anonymous"></script>
 </html>
